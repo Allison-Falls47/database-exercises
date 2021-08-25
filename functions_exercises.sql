@@ -1,26 +1,17 @@
 use employees;
 
-
-SELECT  first_name, last_name
-FROM employees
-WHERE first_name IN ('Irena', 'Vidya','Maya');
-
-SELECT  first_name, last_name
-FROM employees
-WHERE first_name = 'Irena' or first_name = 'Vidya' or first_name = 'Maya';
-
-SELECT first_name
+SELECT CONCAT(first_name, last_name)
 FROM employees
 WHERE first_name like 'E%';
 
-SELECT first_name
+SELECT *
 FROM employees
-WHERE first_name like 'E%' or last_name like '%e';
+WHERE year(birth_date) BETWEEN 1950 AND 2020
+  AND month(birth_date) = 12
+  AND day(birth_date) = 25;
 
-SELECT last_name
+SELECT *
 FROM employees
-WHERE last_name like '%q%';
-
-SELECT last_name
-FROM employees
-WHERE last_name like '%q%' and last_name not like '%qu%';
+WHERE year(hire_date) BETWEEN 1990 AND 1999
+AND month(birth_date) = 12
+  AND day(birth_date) = 25;
