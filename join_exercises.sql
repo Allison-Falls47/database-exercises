@@ -1,6 +1,6 @@
 use employees;
 
-SELECT CONCAT(dept_name, ' ', de.emp_no) AS full_name, d.dept_name
+SELECT CONCAT(dept_name, ' ', e.emp_no) AS full_name, d.dept_name
 FROM employees as e
          JOIN dept_emp as de
               ON de.emp_no = e.emp_no
